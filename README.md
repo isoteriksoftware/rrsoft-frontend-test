@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+This project is a React-based web application that allows users to search for existing articles by user id or title and create new articles. It's built using TypeScript, React, Vite for the build setup, and Vitest for testing.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Results Page
 
-Currently, two official plugins are available:
+The Results page allows users to search for existing articles. It includes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search functionality by user id or title
+- Display of search results
+- Navigation to the Article Creation page
 
-## Expanding the ESLint configuration
+### Article Creation Page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The Article Creation page allows users to create new articles using a form connected to an API. It includes:
 
-- Configure the top-level `parserOptions` property like this:
+- Form for entering article details (title, content, attorney's name, contact info)
+- Client-side validation for form fields
+- Submission of the article to an online API
+- Success and error notifications for article creation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Installation
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/isoteriksoftware/rrsoft-frontend-test.git
+   cd rrsoft-frontend-test
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   yarn install
+   ```
+
+3. **Run the application:**
+
+   ```bash
+   yarn dev
+   ```
+
+4. **Run tests:**
+
+   ```bash
+   yarn test
+   ```
+
+## Usage
+
+- Access the application at `http://localhost:5173`.
+- Use the Results page (index page) to search for articles.
+- Navigate to the Article Creation page to create a new article.
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite (for build setup)
+- Vitest (for testing)
+- Axios (for API communication)
+- React Router (for page navigation)
+- Tailwind CSS (for styling)
