@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import ArticleCard from '../components/ArticleCard';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 type Article = {
   userId: number;
@@ -22,7 +23,10 @@ const Results: React.FC = () => {
     axios
       .get('https://jsonplaceholder.typicode.com/posts')
       .then((response) => setArticles(response.data))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        toast.error('Failed to fetch articles');
+      });
   }, []);
 
   useEffect(() => {
@@ -52,7 +56,7 @@ const Results: React.FC = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="max-w-3xl w-full p-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold mb-6">Law Articles</h1>
+          <h1 className="text-3xl font-bold mb-6">Articles</h1>
           <Link
             to="/create-article"
             className="text-blue-500 hover:underline font-semibold"
@@ -84,6 +88,10 @@ const Results: React.FC = () => {
             </div>
           </Form>
         </Formik>
+
+        {!filteredArticles.length && (
+          <p className="text-xl text-center">Loading articles...</p>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {filteredArticles.map((article) => (
