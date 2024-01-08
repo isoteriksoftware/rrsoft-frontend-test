@@ -90,7 +90,9 @@ const Results: React.FC = () => {
         </Formik>
 
         {!filteredArticles.length && (
-          <p className="text-xl text-center">Loading articles...</p>
+          <p className="text-xl text-center">
+            No article matched your search input
+          </p>
         )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
