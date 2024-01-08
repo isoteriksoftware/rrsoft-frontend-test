@@ -5,7 +5,7 @@ This project is a React-based web application that allows users to search for ex
 The Results page allows users to search for existing articles. It includes:
 
 - Search functionality by user id or title
-- Display of search results
+- Display of search results. Initially, only ten articles are displayed.
 - Navigation to the Article Creation page
 
 ### Article Creation Page
