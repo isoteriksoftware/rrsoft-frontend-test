@@ -1,9 +1,9 @@
-import Button from './Button';
 import React from 'react';
 
 type ArticleCardProps = {
   title: string;
   body: string;
+  userId: number;
 };
 
 const truncateText = (text: string, maxLength: number) => {
@@ -13,12 +13,16 @@ const truncateText = (text: string, maxLength: number) => {
   return text;
 };
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ title, body }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ title, body, userId }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
-      <h2 className="text-lg font-semibold mb-2">{title}</h2>
+      <h2 className="text-lg font-semibold mb-2">{truncateText(title, 30)}</h2>
       <p className="text-gray-600 mb-4">{truncateText(body, 100)}</p>
-      <Button className="py-2 px-4">View Details</Button>
+
+      <div className="flex items-center">
+        <span className="text-sm font-semibold">Author:</span>
+        <span className="text-sm ml-1">{userId}</span>
+      </div>
     </div>
   );
 };
