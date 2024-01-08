@@ -3,6 +3,7 @@ import TextField from '../components/TextField';
 import Button from '../components/Button';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import ArticleCard from '../components/ArticleCard';
 
 const Results: React.FC = () => {
   return (
@@ -30,14 +31,12 @@ const Results: React.FC = () => {
             </div>
           </Form>
         </Formik>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg shadow-md p-4">
-            <h2 className="text-xl font-semibold mb-2">Article Title</h2>
-            <p className="text-gray-600 mb-4">
-              Brief description or snippet of the article content.
-            </p>
-            <Button className="py-2 px-4">View Details</Button>
-          </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          <ArticleCard
+            title="Article Title"
+            body="Brief description or snippet of the article content."
+          />
         </div>
         <div className="mt-8 text-center">
           <a href="/create-article" className="text-blue-500 hover:underline">
